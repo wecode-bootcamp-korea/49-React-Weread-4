@@ -1,0 +1,175 @@
+.main {
+  width: 1000px;
+  height: 1000px;
+  background-color: rgb(228, 228, 228);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  .container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 576px;
+    height: 844px;
+    background-color: white;
+
+    .header {
+      width: 576px;
+      height: 60px;
+      display: flex;
+      align-items: center;
+      padding-left: 30px;
+      padding-bottom: 10px;
+
+      .back {
+        font-size: 20px;
+        text-decoration-line: none;
+      }
+
+      .back:visited {
+        color: black;
+      }
+    }
+
+    .body {
+      width: 528px;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .body strong {
+      font-size: 23px;
+      margin-top: 10px;
+      margin-bottom: 12px;
+    }
+
+    .bodyBasic {
+      display: flex;
+      flex-direction: column;
+      gap: 5px;
+      margin-bottom: 12px;
+    }
+
+    .bodyBasicHeader {
+      display: flex;
+      justify-content: space-between;
+    }
+
+    .bodyBasicHeader div:last-child {
+      color: red;
+    }
+
+    .bodyBasic input {
+      width: 510px;
+      height: 56px;
+      padding-left: 15px;
+      border-radius: 7px;
+      border: 1px solid gray;
+      font-size: 18px;
+    }
+
+    .bodyBasicProfile {
+      margin-top: 10px;
+    }
+
+    .bodyBasicProfileHeader {
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 10px;
+    }
+
+    .bodyBasicProfile input {
+      width: 510px;
+      height: 56px;
+      padding-left: 15px;
+      border-radius: 7px;
+      border: 1px solid gray;
+      font-size: 18px;
+      margin-bottom: 12px;
+    }
+
+    .bodyBasicPhoneNumber {
+      display: flex;
+      justify-content: space-between;
+    }
+
+    .bodyBasicPhoneHeader {
+      display: flex;
+      justify-content: space-between;
+    }
+
+    .bodyBasicPhone select {
+      margin-top: 10px;
+      width: 150px;
+      height: 56px;
+      padding-left: 15px;
+      border-radius: 7px;
+      border: 1px solid gray;
+      font-size: 18px;
+      margin-right: 10px;
+    }
+
+    .bodyBasicPhone input {
+      margin-top: 12px;
+      width: 360px;
+      height: 56px;
+      padding-left: 15px;
+      border-radius: 7px;
+      border: 1px solid gray;
+      font-size: 18px;
+    }
+
+    .birthdayHeader {
+      margin-top: 12px;
+      display: flex;
+      justify-content: space-between;
+    }
+
+    .birthdaySelect {
+      display: flex;
+      justify-content: space-between;
+    }
+
+    .birthdayYear {
+      margin-top: 12px;
+      width: 150px;
+      height: 56px;
+      padding-left: 15px;
+      border-radius: 7px;
+      border: 1px solid gray;
+      font-size: 18px;
+    }
+
+    .birthdayMonth {
+      margin-top: 12px;
+      width: 170px;
+      height: 56px;
+      padding-left: 15px;
+      border-radius: 7px;
+      border: 1px solid gray;
+      font-size: 18px;
+    }
+
+    .birthdayDate {
+      margin-top: 12px;
+      width: 170px;
+      height: 56px;
+      padding-left: 15px;
+      border-radius: 7px;
+      border: 1px solid gray;
+      font-size: 18px;
+    }
+
+    .joinMembership button {
+      margin-top: 70px;
+      width: 525px;
+      height: 56px;
+      background-color: #2d71f7;
+      border-radius: 7px;
+      margin-bottom: 10px;
+      color: white;
+      font-size: 17px;
+    }
+  }
+}
