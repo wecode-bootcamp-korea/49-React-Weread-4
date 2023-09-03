@@ -1,8 +1,19 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import { useState } from "react";
 import "./Login.scss";
 
 const Login = () => {
+  const [email, setEmail] = useState("");
+  const saveUserId = (e) => {
+    setEmail(e.target.value);
+  };
+
+  const [password, setPassword] = useState("");
+  const saveUserPassword = (e) => {
+    setPassword(e.target.value);
+  };
+
   const Membership = () => {
     return (
       <Link className="membership" to={"/main"}>
@@ -10,6 +21,7 @@ const Login = () => {
       </Link>
     );
   };
+
   return (
     <div className="login">
       <div className="loginContainer">
@@ -19,11 +31,18 @@ const Login = () => {
         </div>
         <div className="loginBody">
           <form className="loginForm">
-            <input className="loginEmail" placeholder="이메일"></input>
+            <input
+              className="loginEmail"
+              placeholder="이메일"
+              value={email}
+              onChange={saveUserId}
+            ></input>
             <input
               className="loginPassword"
               placeholder="비밀번호"
               type="password"
+              value={password}
+              onChange={saveUserPassword}
             ></input>
             <input className="loginButton" type="button" value="로그인"></input>
           </form>
