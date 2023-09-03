@@ -4,14 +4,31 @@ import { useState } from "react";
 import "./Login.scss";
 
 const Login = () => {
+  const [turnOn, setTurnOn] = useState(true);
+  const [color, setColor] = useState("gray");
   const [email, setEmail] = useState("");
+
   const saveUserId = (e) => {
     setEmail(e.target.value);
+    email.includes("@") && password.length >= 5
+      ? setTurnOn(false)
+      : setTurnOn(true);
+
+    email.includes("@") && password.length >= 5
+      ? setColor("#2d71f7")
+      : setColor("gray");
   };
 
   const [password, setPassword] = useState("");
   const saveUserPassword = (e) => {
     setPassword(e.target.value);
+    email.includes("@") && password.length >= 5
+      ? setTurnOn(false)
+      : setTurnOn(true);
+
+    email.includes("@") && password.length >= 5
+      ? setColor("#2d71f7")
+      : setColor("gray");
   };
 
   const Membership = () => {
@@ -44,7 +61,13 @@ const Login = () => {
               value={password}
               onChange={saveUserPassword}
             ></input>
-            <input className="loginButton" type="button" value="로그인"></input>
+            <input
+              className="loginButton"
+              type="button"
+              value="로그인"
+              disabled={turnOn}
+              style={{ backgroundColor: color }}
+            ></input>
           </form>
           <div className="loginFooter">
             <Membership />
