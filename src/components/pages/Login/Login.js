@@ -5,13 +5,29 @@ import { Link } from "react-router-dom";
 const Login = () => {
   const [email, setEamil] = useState("");
   const [password, setPassword] = useState("");
+  const [className, setClassName] = useState("loginButton");
+  const [abled, setAbled] = useState(false);
 
   const saveUserEmail = (event) => {
     setEamil(event.target.value);
+    email.includes("@") && password.length >= 5
+      ? setClassName("loginButton")
+      : setClassName("loginButtonNotAction");
+
+    email.includes("@") && password.length >= 5
+      ? setAbled(false)
+      : setAbled(true);
   };
 
   const saveUserPassword = (event) => {
     setPassword(event.target.value);
+    email.includes("@") && password.length >= 5
+      ? setClassName("loginButton")
+      : setClassName("loginButtonNotAction");
+
+    email.includes("@") && password.length >= 5
+      ? setAbled(false)
+      : setAbled(true);
   };
 
   return (
@@ -44,7 +60,9 @@ const Login = () => {
             value={password}
             onChange={saveUserPassword}
           ></input>
-          <button className="loginButton">로그인</button>
+          <button className={className} disabled={abled}>
+            로그인
+          </button>
           <div className="loginOption">
             <div className="join">
               <Link to="/joinInfo">
