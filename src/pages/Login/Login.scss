@@ -48,7 +48,7 @@
     align-self: stretch;
     flex-direction: column;
 
-    #email, #password, #btn{
+    #email, #password, .btnWrap{
       height: 56px;
       width: 100%;
       border-radius: 6px;
@@ -56,21 +56,43 @@
       padding: 19px 0 15px 16px;
       font-size: 16px;
     }
+
+    .btnWrap{
+      padding: 0;
+      margin: 8px 0;
+    }
     
     #email{
       margin-bottom: 8px;
     }
     
-    #btn{
+    .btn{
       font-size: 18px;
       font-weight: bold;
+      width: 100%;
+      height: 100%;
       color: #fff;
-      background-color: #2D71F7;
+      background-color: #2d71f7;
       border: none;
-      text-align: center;
-      line-height: normal;
+      display: flex;
+      justify-content: center;
+      align-items: center;
       padding-left: 0;
-      margin: 16px 0;
+    }
+
+    .btnOn{
+      font-size: 18px;
+      font-weight: bold;
+      width: 100%;
+      height: 100%;
+      color: #fff;
+      background-color: #2d71f7;
+      border: none;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding-left: 0;
+      opacity: 50%;
     }
     
     ul{
