@@ -1,6 +1,6 @@
 import React ,{ useState } from "react";
 import "./Login.scss";
-import { Link, } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 const Login = () => {
 
@@ -38,14 +38,6 @@ const Login = () => {
 
   }
 
-  // const bgChange=()=>{
-  //   setClassName("btn");
-
-  //   return !setIsTurnOn(false)
-  //   ? className("btnOn")
-  //   : className("btn");
-
-  // }
 
   return (
     <div className="login">
