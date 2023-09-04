@@ -1,8 +1,19 @@
-import React from "react";
+import React, { useState } from "react";
 import "./Login.scss";
 import { Link } from "react-router-dom";
 
 const Login = () => {
+  const [email, setEamil] = useState("");
+  const [password, setPassword] = useState("");
+
+  const saveUserEmail = (event) => {
+    setEamil(event.target.value);
+  };
+
+  const saveUserPassword = (event) => {
+    setPassword(event.target.value);
+  };
+
   return (
     <div className="login">
       <div className="container">
@@ -19,11 +30,19 @@ const Login = () => {
           ></img>
         </div>
         <div className="inputContainer">
-          <input className="email" type="email" placeholder="이메일"></input>
+          <input
+            className="email"
+            type="email"
+            placeholder="이메일"
+            value={email}
+            onChange={saveUserEmail}
+          ></input>
           <input
             className="password"
             type="password"
             placeholder="비밀번호"
+            value={password}
+            onChange={saveUserPassword}
           ></input>
           <button className="loginButton">로그인</button>
           <div className="loginOption">

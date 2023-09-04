@@ -1,12 +1,12 @@
+@import "../../../styles/mixin.scss";
+
 * {
   box-sizing: border-box;
 }
 
 .main {
   height: 100vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  @include flexCenter;
 
   .joinInfo {
     width: 576px;
@@ -48,9 +48,7 @@
       .text {
         width: 100%;
         height: 22px;
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
+        @include flexSort(space-between, center);
         align-self: stretch;
         margin-bottom: 8px;
 
@@ -80,8 +78,7 @@
           padding: 19px 0 15px 16px;
           border-radius: 6px;
           border: 1px solid #e0e0e0;
-          font-size: 16px;
-          font-weight: 400;
+          @include textStyle(16px, 400);
           color: #999999;
         }
 
@@ -91,8 +88,7 @@
           padding: 19px 0 15px 16px;
           border-radius: 6px;
           border: 1px solid #e0e0e0;
-          font-size: 16px;
-          font-weight: 400;
+          @include textStyle(16px, 400);
           color: #999999;
         }
 
@@ -102,8 +98,7 @@
           padding: 19px 0 15px 16px;
           border-radius: 6px;
           border: 1px solid #e0e0e0;
-          font-size: 16px;
-          font-weight: 400;
+          @include textStyle(16px, 400);
           color: #999999;
         }
       }
@@ -135,8 +130,7 @@
           padding: 19px 0 15px 16px;
           border-radius: 6px;
           border: 1px solid #e0e0e0;
-          font-size: 16px;
-          font-weight: 400;
+          @include textStyle(16px, 400);
           color: #999999;
           margin-top: 8px;
         }
@@ -226,9 +220,7 @@
             width: 136px;
             border-radius: 6px;
             border: 1px solid #e0e0e0;
-            display: flex;
-            justify-content: center;
-            align-items: center;
+            @include flexCenter;
             padding: 16px 14px 15px 16px;
 
             .birthYear {
@@ -243,9 +235,7 @@
             width: 188px;
             border-radius: 6px;
             border: 1px solid #e0e0e0;
-            display: flex;
-            justify-content: center;
-            align-items: center;
+            @include flexCenter;
             padding: 16px 14px 15px 16px;
 
             .birthMonth {
@@ -260,9 +250,7 @@
             width: 188px;
             border-radius: 6px;
             border: 1px solid #e0e0e0;
-            display: flex;
-            justify-content: center;
-            align-items: center;
+            @include flexCenter;
             padding: 16px 14px 15px 16px;
 
             .birthDay {
@@ -283,9 +271,7 @@
       button {
         width: 528px;
         height: 56px;
-        display: flex;
-        justify-content: center;
-        align-items: center;
+        @include flexCenter;
         border: 0;
         outline: 0;
         border-radius: 6px;

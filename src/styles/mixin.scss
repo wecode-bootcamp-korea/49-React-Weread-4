@@ -4,6 +4,12 @@
   align-items: center;
 }
 
+@mixin flexSort($justify, $alignItems) {
+  display: flex;
+  justify-content: $justify;
+  align-items: $alignItems;
+}
+
 @mixin textStyle($fontSize, $fontWeight) {
   font-size: $fontSize;
   font-weight: $fontWeight;
