@@ -40,6 +40,7 @@
     .loginForm {
       display: flex;
       flex-direction: column;
+      padding-left: 25px;
     }
 
     .loginForm :nth-child(-n + 2) {
@@ -55,7 +56,6 @@
     .loginButton {
       width: 477px;
       height: 56px;
-      background-color: #2d71f7;
       border-radius: 7px;
       margin-bottom: 10px;
       color: white;

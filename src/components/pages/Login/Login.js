@@ -4,39 +4,21 @@ import { useState } from "react";
 import "./Login.scss";
 
 const Login = () => {
-  const [turnOn, setTurnOn] = useState(true);
-  const [color, setColor] = useState("gray");
-  const [email, setEmail] = useState("");
-
-  const saveUserId = (e) => {
-    setEmail(e.target.value);
-    email.includes("@") && password.length >= 5
-      ? setTurnOn(false)
-      : setTurnOn(true);
-
-    email.includes("@") && password.length >= 5
-      ? setColor("#2d71f7")
-      : setColor("gray");
-  };
-
-  const [password, setPassword] = useState("");
-  const saveUserPassword = (e) => {
-    setPassword(e.target.value);
-    email.includes("@") && password.length >= 5
-      ? setTurnOn(false)
-      : setTurnOn(true);
-
-    email.includes("@") && password.length >= 5
-      ? setColor("#2d71f7")
-      : setColor("gray");
-  };
-
   const Membership = () => {
     return (
       <Link className="membership" to={"/main"}>
         회원가입
       </Link>
     );
+  };
+  const [userInfo, setUserInfo] = useState({ email: "", pw: "" });
+  const { email, pw } = userInfo;
+  const isCheckValidation = email.includes("@") && pw.length >= 5;
+
+  const hadleUserUserInfo = (e) => {
+    const { name, value } = e.target;
+
+    setUserInfo({ ...userInfo, [name]: value });
   };
 
   return (
@@ -51,22 +33,24 @@ const Login = () => {
             <input
               className="loginEmail"
               placeholder="이메일"
-              value={email}
-              onChange={saveUserId}
+              name="email"
+              onChange={hadleUserUserInfo}
             ></input>
             <input
               className="loginPassword"
               placeholder="비밀번호"
               type="password"
-              value={password}
-              onChange={saveUserPassword}
+              name="pw"
+              onChange={hadleUserUserInfo}
             ></input>
             <input
               className="loginButton"
               type="button"
               value="로그인"
-              disabled={turnOn}
-              style={{ backgroundColor: color }}
+              disabled={isCheckValidation}
+              style={{
+                backgroundColor: `${isCheckValidation ? "#2d71f7" : "gray"}`,
+              }}
             ></input>
           </form>
           <div className="loginFooter">
