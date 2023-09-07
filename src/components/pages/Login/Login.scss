@@ -1,0 +1,78 @@
+@import "/src/styles/common.scss";
+@import "/src/styles/variables.scss";
+
+.login {
+  width: 100vh;
+  height: 100vh;
+  background-color: $background-gray;
+  @include flexCenter();
+
+  .loginContainer {
+    width: 576px;
+    height: 844px;
+    background-color: white;
+  }
+
+  .loginLogo {
+    width: 576px;
+    height: 555px;
+    gap: 24px;
+    margin-bottom: 24px;
+    flex-direction: column;
+    @include flexCenter();
+
+    .loginLogo img:first-child {
+      width: 118px;
+      height: 143px;
+    }
+
+    .loginLogo img:last-child {
+      width: 118px;
+    }
+  }
+
+  .loginBody {
+    width: 556px;
+    height: 225px;
+    flex-direction: column;
+    @include flexCenter();
+
+    .loginForm {
+      display: flex;
+      flex-direction: column;
+      padding-left: 25px;
+    }
+
+    .loginForm :nth-child(-n + 2) {
+      width: 456px;
+      height: 56px;
+      padding-left: 15px;
+      border-radius: 7px;
+      border: 1px solid gray;
+      font-size: 18px;
+      margin-bottom: 7px;
+    }
+
+    .loginButton {
+      width: 477px;
+      height: 56px;
+      border-radius: 7px;
+      margin-bottom: 10px;
+      color: white;
+      font-size: 17px;
+    }
+
+    .loginFooter {
+      display: flex;
+      gap: 20px;
+    }
+
+    .membership {
+      color: black;
+      text-decoration-line: none;
+    }
+    .membership:visited {
+      color: black;
+    }
+  }
+}
