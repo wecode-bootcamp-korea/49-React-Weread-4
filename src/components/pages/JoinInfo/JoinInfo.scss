@@ -176,8 +176,9 @@
           }
 
           #phoneNumber {
+            width: 383px;
             height: 56px;
-            padding: 19px 189px 15px 16px;
+            padding: 19px 0 15px 16px;
             margin-top: 8px;
             border-radius: 6px;
             border: 1px solid #e0e0e0;
@@ -190,7 +191,7 @@
       .birth {
         width: 100%;
         height: 86px;
-        position: relative;
+        position: flex;
 
         label {
           width: 100%;

@@ -60,7 +60,7 @@ const Login = () => {
             value={password}
             onChange={saveUserPassword}
           ></input>
-          <button className={className} disabled={abled}>
+          <button className={className} disabled={abled} type="button">
             로그인
           </button>
           <div className="loginOption">
