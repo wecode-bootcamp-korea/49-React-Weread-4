@@ -3,32 +3,35 @@ import "./Login.scss";
 import { Link } from "react-router-dom";
 
 const Login = () => {
-  const [email, setEamil] = useState("");
-  const [password, setPassword] = useState("");
-  const [className, setClassName] = useState("loginButton");
-  const [abled, setAbled] = useState(false);
+  const [userInfo, setUserInfo] = useState({
+    email: "",
+    password: "",
+  });
 
-  const saveUserEmail = (event) => {
-    setEamil(event.target.value);
-    email.includes("@") && password.length >= 5
-      ? setClassName("loginButton")
-      : setClassName("loginButtonNotAction");
+  const { email, password } = userInfo;
 
-    email.includes("@") && password.length >= 5
-      ? setAbled(false)
-      : setAbled(true);
+  const handleUserInfo = (event) => {
+    const { name, value } = event.target;
+
+    setUserInfo({ ...userInfo, [name]: value });
   };
 
-  const saveUserPassword = (event) => {
-    setPassword(event.target.value);
-    email.includes("@") && password.length >= 5
-      ? setClassName("loginButton")
-      : setClassName("loginButtonNotAction");
+  const isInputValid = email.includes("@") && password.length >= 5;
 
-    email.includes("@") && password.length >= 5
-      ? setAbled(false)
-      : setAbled(true);
-  };
+  // const handleLogin = () => {
+  //   fetch("http://localhost:8000/", {
+  //     method: "POST",
+  //     headers: [["Content-Type", "application/json"]],
+  //     body: JSON.stringify({
+  //       email: email,
+  //       password: password,
+  //     }),
+  //   })
+  //     .then((res) => res.json())
+  //     .then((data) => {
+  //       console.log("로그인 확인하기");
+  //     });
+  // };
 
   return (
     <div className="login">
@@ -45,22 +48,27 @@ const Login = () => {
             alt="로고글씨"
           ></img>
         </div>
-        <div className="inputContainer">
+        <form className="inputContainer">
           <input
             className="email"
             type="email"
             placeholder="이메일"
-            value={email}
-            onChange={saveUserEmail}
+            name="email"
+            onChange={handleUserInfo}
           ></input>
           <input
             className="password"
             type="password"
             placeholder="비밀번호"
-            value={password}
-            onChange={saveUserPassword}
+            name="password"
+            onChange={handleUserInfo}
           ></input>
-          <button className={className} disabled={abled} type="button">
+          <button
+            className="loginButton "
+            disabled={!isInputValid}
+            type="button"
+            // onClick={handleLogin}
+          >
             로그인
           </button>
           <div className="loginOption">
@@ -74,7 +82,7 @@ const Login = () => {
               <p>비밀번호 찾기</p>
             </div>
           </div>
-        </div>
+        </form>
       </div>
     </div>
   );

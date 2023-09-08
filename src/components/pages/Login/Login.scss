@@ -82,23 +82,13 @@
         margin-bottom: 16px;
         @include textStyle(18px, 800);
         line-height: 21.6px;
-      }
+        cursor: pointer;
 
-      .loginButtonNotAction {
-        height: 56px;
-        @include flexCenter;
-        align-self: stretch;
-        border-radius: 6px;
-        border: 0;
-        outline: 0;
-        background: #2d71f7;
-        opacity: 0.5;
-        color: white;
-        text-align: center;
-        margin-top: 16px;
-        margin-bottom: 16px;
-        @include textStyle(18px, 800);
-        line-height: 21.6px;
+        &:disabled {
+          background: #2d71f7;
+          opacity: 0.5;
+          cursor: default;
+        }
       }
 
       .loginOption {

@@ -1,9 +1,43 @@
-import React from "react";
+import React, { useState } from "react";
 import "./JoinInfo.scss";
 import { useNavigate } from "react-router-dom";
 
 const Main = () => {
+  const [inputs, setInputs] = useState({
+    email: "",
+    password: "",
+    passwordCheck: "",
+  });
+
+  const { email, password, passwordCheck } = inputs;
+
+  // const [className, setClassName] = useState("loginButton");
+  // const [abled, setAbled] = useState(false);
+
+  const onChange = (event) => {
+    setInputs({
+      ...inputs,
+      [event.target.className]: event.target.value,
+    });
+  };
+
   const navigate = useNavigate();
+
+  // const handleJoin = () => {
+  //   fetch("http://localhost:8000/", {
+  //     method: "POST",
+  //     headers: [["Content-Type", "application/json"]],
+  //     body: JSON.stringify({
+  //       // name: "soyeun",
+  //       email: email,
+  //       password: password,
+  //     }),
+  //   })
+  //     .then((res) => res.json())
+  //     .then((data) => {
+  //       console.log("연결");
+  //     });
+  // };
 
   const SelectsBirthYear = () => {
     const years = [];
@@ -62,16 +96,26 @@ const Main = () => {
             <p className="text2">필수 사항</p>
           </div>
           <div className="list">
-            <input className="email" type="email" placeholder="이메일"></input>
             <input
-              className="pwd"
-              type="password"
-              placeholder="비밀번호"
+              className="email"
+              value={email}
+              type="email"
+              placeholder="이메일"
+              onChange={onChange}
             ></input>
             <input
-              className="pwdCheck"
+              className="password"
+              value={password}
               type="password"
-              placeholder="비밀번호확인"
+              placeholder="비밀번호"
+              onChange={onChange}
+            ></input>
+            <input
+              className="passwordCheck"
+              value={passwordCheck}
+              type="password"
+              placeholder="비밀번호 확인"
+              onChange={onChange}
             ></input>
           </div>
           <div className="nick">
@@ -118,7 +162,14 @@ const Main = () => {
           </div>
         </section>
         <footer>
-          <button>회원 가입</button>
+          <button
+            className="joinButton"
+            // disabled={abled}
+            type="button"
+            // onClick={handleJoin}
+          >
+            회원 가입
+          </button>
         </footer>
       </div>
     </div>
